@@ -1,0 +1,95 @@
+/*
+Repository Blueprint: metasphere-xr (Meta Quest 2 WebXR + Langflow-AI)
+Description: Fully immersive XR ecosystem integrating Babylon.js, WebXR, Firebase, and Langflow-AI orchestration. Designed for emergent, bleeding-edge VR workflows.
+*/
+
+{
+  "repo_name": "metasphere-xr",
+  "description": "Meta Quest 2 WebXR + Langflow-AI full-stack immersive ecosystem.",
+  "structure": {
+    "README.md": "Overview, architecture summary, setup instructions.",
+    "LICENSE": "MIT or user-defined license.",
+    ".gitignore": "Ignore node_modules, __pycache__, .env, assets/cache.",
+    "package.json": "Node dependencies: Babylon.js, WebXR utils, Three.js helpers.",
+    "pyproject.toml": "Python dependencies: Langflow, FastAPI, Pydantic, Firebase Admin SDK.",
+
+    "docs/": {
+      "architecture.md": "High-level XR + AI architecture diagrams.",
+      "knowledge-index.md": "Emergent Knowledge Index of assets, flows, state machines.",
+      "state-machines.md": "Langflow state machines and event triggers.",
+      "onboarding.md": "Setup guide, onboarding steps for devs and artists."
+    },
+
+    "scripts/": {
+      "setup_env.sh": "Automates Node + Python environment setup.",
+      "deploy_firebase.sh": "Deploys backend & Firestore structures.",
+      "generate_3d_index.py": "Parses assets + flows → outputs structured JSON knowledge index.",
+      "sync_assets.sh": "Sync local 3D assets to cloud storage for runtime."
+    },
+
+    "frontend/": {
+      "package.json": "Node frontend dependencies.",
+      "src/": {
+        "index.html": "WebXR app entry point.",
+        "app.js": "Bootstraps Babylon.js scene + VR session.",
+        "xr_engine.js": "Babylon.js WebXR wrapper optimized for Quest 2.",
+        "controllers.js": "Quest 2 controller input handling.",
+        "hand_tracking.js": "Hand-tracking support.",
+        "state_machine_ui.js": "3D visualization of Langflow state machines."
+      },
+      "assets/": {
+        "models/": "GLTF/GLB 3D models.",
+        "textures/": "Texture maps and materials.",
+        "avatars/": "Player or AI avatars.",
+        "sounds/": "3D audio assets for immersive interactions."
+      },
+      "styles/": {
+        "xr_ui.css": "VR-specific UI styling.",
+        "fonts/": "Optional fonts for UI labels."
+      }
+    },
+
+    "backend/": {
+      "main.py": "FastAPI entry point.",
+      "firebase_client.py": "Helper functions for Firestore interaction.",
+      "models/": "Pydantic data models.",
+      "routes/": "API endpoints for frontend and AI triggers.",
+      "workers/": "Async background workers, AI task triggers, event handling."
+    },
+
+    "langflow/": {
+      "flows/": {
+        "vr_navigation.flow.json": "Flow for immersive navigation in VR space.",
+        "avatar_behavior.flow.json": "AI-driven avatar actions and responses.",
+        "event_triggers.flow.json": "Custom triggers for scene events, AI logic."
+      },
+      "nodes/": {
+        "ai_nodes.py": "Custom AI nodes and LLM integration."
+      },
+      "orchestrator.py": "Coordinates Langflow flows with frontend and backend events."
+    },
+
+    "assets/": {
+      "avatars/": "Shared 3D avatar models.",
+      "environments/": "XR scenes, rooms, and world assets.",
+      "sounds/": "Shared audio assets.",
+      "textures/": "Shared textures for models and environments."
+    },
+
+    "tests/": {
+      "frontend_tests/": "Unit and integration tests for VR frontend.",
+      "backend_tests/": "FastAPI endpoint and Firestore tests.",
+      "ai_tests/": "Langflow flow validation and AI node tests."
+    }
+  },
+
+  "bootstrapping": {
+    "instructions": [
+      "Run scripts/setup_env.sh to install Node, Python, and dependencies.",
+      "Run scripts/deploy_firebase.sh to provision backend & Firestore.",
+      "Use scripts/generate_3d_index.py to build emergent knowledge index.",
+      "Start frontend with npm start in frontend/.",
+      "Launch backend FastAPI server via uvicorn backend.main:app --reload."
+    ]
+  }
+}
